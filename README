@@ -13,3 +13,19 @@ submodule-hooks
   to run git-submodule update. To use, copy to
   $GIT_DIR/hooks/post-checkout and/or $GIT_DIR/hooks/post-merge and
   make them executable.
+
+
+Installing into the current repository
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+	if [ -d /tmp/gitutils ]
+	then
+		cd /tmp/gitutils; git pull; cd -; 
+	else
+		git clone git@github.com:roustem/gitutils.git /tmp/gitutils
+	fi
+
+	chmod a+x /tmp/gitutils/submodule-hooks/*
+	cp /tmp/gitutils/submodule-hooks/* ./.git/hooks/
+
+
