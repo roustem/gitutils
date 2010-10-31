@@ -18,16 +18,11 @@ submodule-hooks
 Installing into the current repository
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-	if [ -d /tmp/gitutils ]
-	then
-		cd /tmp/gitutils; git pull; cd -; 
-	else
-		git clone git@github.com:roustem/gitutils.git /tmp/gitutils
-	fi
+	if [ -d /tmp/gitutils ]; then cd /tmp/gitutils; git pull; cd -; else git clone git@github.com:roustem/gitutils.git /tmp/gitutils; fi
 
 	chmod a+x /tmp/gitutils/submodule-hooks/*
 	cp /tmp/gitutils/submodule-hooks/pre-commit ./.git/hooks/
-	cp /tmp/gitutils/submodule-hooks/post-merge-commit ./.git/hooks/post-merge
-	cp /tmp/gitutils/submodule-hooks/post-merge-commit ./.git/hooks/post-commit
+	cp /tmp/gitutils/submodule-hooks/post-merge-checkout ./.git/hooks/post-merge
+	cp /tmp/gitutils/submodule-hooks/post-merge-checkout ./.git/hooks/post-checkout
 
 
